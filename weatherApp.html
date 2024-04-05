@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="icon" href="weather_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="app__body">
+        <div class="app__header">
+            <a href="index.html"><i class="fa-solid fa-arrow-left-long"></i> Weather App</a>
+        </div>
+        <hr>
+        <div class="weather__info">
+            <img id="weather__info-icon" alt="icon">
+            <p id="weather__info-temp" class="weather__temp"></p>
+            <p id="weather__info-details" class="weather__details"></p>
+        </div>
+        <div class="wheather__humidity">
+            <i class="fa-solid fa-droplet"></i>
+            <div class="wheather__humidity-value">
+                <p id="value1"></p>
+                <p>Humidity</p>
+            </div>
+        </div>
+        <div class="wheather__wind">
+            <i class="fa-solid fa-wind"></i>
+            <div class="wheather__wind-value">
+                <p id="value2"></p>
+                <p>Wind Speed</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function weatherFunction() {
+            // Get the URL parameters
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            // Retrieve the value of the 'data' parameter
+            const data = urlParams.get('data');
+
+            const key = "49b0d404e80342cf8f275420240404";
+            console.log(data);
+            let current_location = data;
+            const api_url = fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${current_location}&aqi=no`);
+            api_url.then((responce) => {
+                return responce.json();
+            }).then((data) => {
+                console.log(data);
+                document.getElementById('weather__info-icon').src = `https:${data.current.condition.icon}`;
+                document.getElementById('weather__info-temp').innerHTML = `${data.current.temp_c}°C`;
+                document.getElementById('weather__info-details').innerHTML = data.current.condition.text;
+                document.getElementById('value1').innerHTML = `${data.current.humidity}%`;
+                document.getElementById('value2').innerHTML = `${data.current.wind_kph}Km/H`;
+
+
+            })
+        }
+        weatherFunction();
+    </script>
+</body>
+
+</html>

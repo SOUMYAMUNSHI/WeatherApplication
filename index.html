@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="icon" href="weather_icon.png">
+    <link rel="stylesheet" href="index__stylesheet.css">
+</head>
+
+<body>
+    <div class="weather__location-body">
+        <div class="weather__location-body-content">
+            <input id="weather__location-data" class="weather__location-input" type="text" placeholder="Enter location"
+                required>
+            <a id="weather__location-data-send"><button class="weather__location-button" type="button" value="Search"
+                    onclick="SendData()">Search</button></a>
+        </div>
+    </div>
+    <p class="disclember">*Search locations that belongs to USA, UK and Canada</p>
+    <script>
+        function SendData() {
+            let location_name = document.getElementById('weather__location-data').value;
+            if (location_name == "") {
+                alert("Enter Location Details");
+            }
+            else {
+                document.getElementById('weather__location-data-send').href = `weatherApp.html?data=${location_name}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

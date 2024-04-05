@@ -1,0 +1,106 @@
+*
+{
+    margin: 0px;
+}
+.app__body
+{
+    /* border: 2px solid black; */
+    width: 25%;
+    height:75vh;
+    margin-left:35%;
+    border-radius: 5px;
+    background-color:white;
+    border-bottom: 2px solid gray;
+    /* border-right: 3px solid gray; */
+    /* border-left: 0.5px solid gray; */
+}.app__body > hr
+{
+    border-top: 1px solid white;
+}
+.app__header
+{
+    padding: 10px;
+}
+.app__header > a
+{
+    font-size: 18px;
+    font-family:"Open Sans", sans-serif;
+    font-weight: bold;
+    color:#00acc1;
+    text-decoration: none;
+}
+.weather__info > img
+{
+    height: 150px;
+    /*width:150px;*/
+    margin-top:20px;
+    margin-left: 28%;
+    /*margin-bottom: 10px;*/
+    /*border: 1px solid black;*/
+}
+.weather__info > .weather__temp{
+    font-family: "Rubik", sans-serif;
+    font-size:60px;
+    text-align: center;
+    font-weight: bold;
+}
+.weather__info > .weather__details
+{
+    font-family: "Ubuntu", sans-serif;
+    font-size:23px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*.weather__info > .weather__location
+{
+    font-family: "Open Sans", sans-serif;
+    font-size:20px;
+    text-align: center;
+    margin-bottom: 10px;
+}*/
+.wheather__humidity
+{
+    /* border: 1px solid black; */
+    margin-left:15px;
+    margin-top:50px;
+    width:130px;
+    display: inline-block;
+}
+.wheather__humidity > i
+{
+    font-size: 40px;
+}
+
+.wheather__humidity > .wheather__humidity-value
+{
+    display: inline-block;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+}
+.wheather__humidity > .wheather__humidity-value > #value1
+{
+    font-weight: bold;
+}
+.wheather__wind
+{
+    /* border: 1px solid black; */
+    margin-left:20px;
+    margin-top:50px;
+    /* width:130px; */
+    display: inline-block;
+    margin-right: 10px;
+}
+.wheather__wind > i
+{
+    font-size: 40px;
+}
+.wheather__wind > .wheather__wind-value
+{
+    display: inline-block;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+}
+.wheather__wind > .wheather__wind-value > #value2
+{
+    font-weight: bold;
+}
